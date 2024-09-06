@@ -1,0 +1,43 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+  font-family: "Roboto-Mono";
+  src: 
+    url("/fonts/roboto_mono/RobotoMono-VariableFont_wght.ttf") format("truetype");
+}
+
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+  --page-padding-horizontal: 128px;
+  --section-padding-vertical: 64px;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: rgb(24 24 27);
+    --foreground: theme(colors.neutral.400);
+  }
+}
+
+.font-roboto-mono {
+  font-family: "Roboto-Mono";
+}
+
+body {
+  min-height: 100vh;
+  background-color: var(--background);
+  background-image: url("/background_noise.png");
+  background-size: 200px 200px;
+  background-position: 0 0;
+  font-family: Arial, Helvetica, sans-serif;
+  color: var(--foreground);
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}

@@ -1,0 +1,17 @@
+{
+    "configurations": [
+        {
+            "name": "Launch Server",
+            "type": "node-terminal",
+            "request": "launch",
+            "command": "npm run dev"
+        },
+
+        {
+            "name": "Website",
+            "type": "chrome",
+            "request": "launch",
+            "url": "http://localhost:3000",
+        }
+    ]
+}
