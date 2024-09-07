@@ -17,7 +17,7 @@ export default function ProjectsPage() {
 
         <div className="mt-16 grid grid-cols-3 gap-4">
           {new Array(6).fill(0).map(
-            (element) => <ProjectCard key={element} />
+            (element, index) => <ProjectCard key={element} index={index} />
           )}
         </div>
       </main>
