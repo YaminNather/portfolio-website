@@ -1,5 +1,6 @@
 import { Button } from "@/app/components/button/button";
-import { DetailedHTMLProps, HTMLAttributes } from "react";
+import { IconButton } from "@/app/components/icon_button";
+import { DetailedHTMLProps, HTMLAttributes, ReactNode } from "react";
 import { DiPostgresql } from "react-icons/di";
 import { FaAws, FaExternalLinkAlt, FaGithub, FaMusic, FaReact } from "react-icons/fa";
 import { RiNextjsFill } from "react-icons/ri";
@@ -25,30 +26,32 @@ export function ProjectCard(props: ProjectCardProps) {
       
       <div className="mt-8 flex justify-between items-center">
         <div className="flex items-center">
-          <div className="flex-shrink-0 flex size-8 bg-neutral-800 bg-opacity-70 rounded-md p-1 justify-center items-center">
-            <RiNextjsFill className="size-full" />
-          </div>
+          <ProjectTechnologyIcon iconBuilder={(className) => <RiNextjsFill className={className} />} />
           
-          <div className="ms-2 flex-shrink-0 flex size-8 bg-neutral-800 bg-opacity-70 rounded-md p-1 justify-center items-center">
-            <FaAws className="size-full" />
-          </div>
+          <ProjectTechnologyIcon className="m-2" iconBuilder={(className) => <FaAws className={className} />} />
           
-          <div className="ms-2 flex-shrink-0 flex size-8 bg-neutral-800 bg-opacity-70 rounded-md p-1 justify-center items-center">
-            <DiPostgresql className="size-full" />
-          </div>
+          <ProjectTechnologyIcon className="m-2" iconBuilder={(className) => <DiPostgresql className={className} />} />
           
         </div>
 
         <div className="flex items-center">
-          <div className="flex-shrink-0 flex size-8 bg-neutral-800 bg-opacity-70 rounded-md p-1 justify-center items-center">
-            <FaGithub className="size-full" />
-          </div>
+          <a href="https://github.com">
+            <IconButton iconBuilder={(className) => <FaGithub className={className} />} />
+          </a>
 
           <Button className="min-w-24 min-h-8 rounded-md ms-2 bg-neutral-800 bg-opacity-70 flex justify-center items-center">
             <FaExternalLinkAlt /> <span className="ms-2">Live Url</span>
           </Button>
         </div>
       </div>
+    </div>
+  );
+}
+
+export function ProjectTechnologyIcon(props: {iconBuilder: (className: string) => ReactNode, className?: string}): ReactNode {
+  return (
+    <div className={`flex size-8 rounded-md bg-neutral-800 bg-opacity-70 p-1 justify-center items-center transition:all ${props.className}`}>
+      {props.iconBuilder("size-full")}
     </div>
   );
 }
