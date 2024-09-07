@@ -1,6 +1,7 @@
 import { H1 } from "@/app/components/headings/h1";
 import { NavBar } from "@/app/components/nav_bar";
 import { ProjectCard } from "./components/project_card/project_card";
+import { Project } from "./project";
 
 export default function ProjectsPage() {
   return (
@@ -16,8 +17,19 @@ export default function ProjectsPage() {
         </p>
 
         <div className="mt-16 grid grid-cols-3 gap-4">
-          {new Array(6).fill(0).map(
-            (element, index) => <ProjectCard key={element} index={index} />
+          {Project.values.map(
+            (element, index) => (
+              <ProjectCard
+                key={element.name} 
+                index={index} 
+                name={element.name} 
+                description={element.description} 
+                technologies={element.technologies} 
+                githubUrl={element.githubUrl}
+                liveUrl={element.liveUrl}
+                videoUrl={element.videoUrl}
+              />
+            )
           )}
         </div>
       </main>
