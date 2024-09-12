@@ -2,6 +2,7 @@ import { H1 } from "@/app/components/headings/h1";
 import { NavBar } from "@/app/components/nav_bar";
 import { ProjectCard } from "./components/project_card/project_card";
 import { Project } from "./project";
+import { Footer } from "@/app/components/footer/footer";
 
 export default function ProjectsPage() {
   return (
@@ -33,6 +34,8 @@ export default function ProjectsPage() {
           )}
         </div>
       </main>
+      
+      <Footer />
     </>
   );
 }
