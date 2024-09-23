@@ -1,10 +1,11 @@
 import { Button } from "@/app/components/button/button";
 import { IconButton } from "@/app/components/icon_button";
 import { DetailedHTMLProps, HTMLAttributes, ReactNode } from "react";
-import { DiPostgresql } from "react-icons/di";
-import { FaAws, FaExternalLinkAlt, FaGithub, FaMusic, FaReact } from "react-icons/fa";
+import { DiFirebase, DiPostgresql } from "react-icons/di";
+import { FaAws, FaExternalLinkAlt, FaGithub, FaMusic, FaReact, FaUnity } from "react-icons/fa";
 import { RiNextjsFill } from "react-icons/ri";
 import { Technology } from "../../project";
+import { SiArduino } from "react-icons/si";
 
 export interface ProjectCardProps extends Omit<DetailedHTMLProps<HTMLAttributes<HTMLDivElement>, HTMLDivElement>, "children"> {
   readonly index: number;
@@ -18,10 +19,10 @@ export interface ProjectCardProps extends Omit<DetailedHTMLProps<HTMLAttributes<
 
 export function ProjectCard(props: ProjectCardProps) {
   return (
-    <div {...props} className="bg-neutral-800 bg-opacity-40 hover:outline outline-neutral-500 rounded-md p-4 transition-all">
+    <div {...props} className="flex bg-neutral-800 bg-opacity-40 hover:outline outline-neutral-500 rounded-md p-4 flex-col transition-all">
       <div className="flex items-start">
         <div className="flex-shrink-0 flex size-20 bg-neutral-800 bg-opacity-60 rounded-md p-4 justify-center items-center">
-          <FaMusic className={`size-full ${projectIconColors[props.index]}` }/>
+          <FaMusic className={`size-full ${projectIconColors[props.index % projectIconColors.length]}` }/>
         </div>
         
         <div className="ms-4">
@@ -32,8 +33,10 @@ export function ProjectCard(props: ProjectCardProps) {
           </div>
         </div>
       </div>
+
+      <div className="flex-shrink-0 flex-grow" />
       
-      <div className="mt-8 flex justify-between items-center">
+      <div className="mt-4 flex justify-between items-center">
         <div className="flex items-center">
           {props.technologies.map(
             (element, index) => <ProjectTechnologyIcon key={element} className={(index !== 0) ? "m-2" : undefined} iconBuilder={mapProjectTechnologyEnumToIcon(element)} />
@@ -42,16 +45,18 @@ export function ProjectCard(props: ProjectCardProps) {
 
         <div className="flex items-center">
           {(props.githubUrl) ? 
-              <a href={props.githubUrl}>
-                <IconButton iconBuilder={(className) => <FaGithub className={className} />} />
-              </a> 
-              : undefined}
+            <a href={props.githubUrl}>
+              <IconButton iconBuilder={(className) => <FaGithub className={className} />} />
+            </a> 
+            : undefined}
           
           {(props.liveUrl) ?
+            <a href={props.liveUrl}>
               <Button className="min-w-24 min-h-8 rounded-md ms-2 bg-neutral-800 bg-opacity-70 flex justify-center items-center">
                   <FaExternalLinkAlt /> <span className="ms-2">Live Url</span>
               </Button>
-              : undefined}
+            </a>
+            : undefined}
         </div>
       </div>
     </div>
@@ -71,7 +76,10 @@ function mapProjectTechnologyEnumToIcon(enumValue: Technology): (className: stri
     case Technology.aws: return (className) => <FaAws className={className} />;
     case Technology.nextJs: return (className) => <RiNextjsFill className={className} />;
     case Technology.postgreSql: return (className) => <DiPostgresql className={className} />;
-    case Technology.reactJs: return (className) => <FaReact className={className} />
+    case Technology.reactJs: return (className) => <FaReact className={className} />;
+    case Technology.unity3D: return (className) => <FaUnity className={className} />;
+    case Technology.arduino: return (className) => <SiArduino className={className} />;
+    case Technology.firebase: return (className) => <DiFirebase className={className} />;
   }
 }
 

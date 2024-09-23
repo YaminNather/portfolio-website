@@ -5,6 +5,9 @@ export enum Technology {
     reactJs,
     postgreSql,
     aws,
+    unity3D,
+    firebase,
+    arduino
 }
 
 export class Project {
@@ -40,13 +43,25 @@ export class Project {
             </>
         ),
         technologies: [ Technology.nextJs, Technology.aws, Technology.postgreSql ],
-        githubLink: 'https://www.github.com',
-        liveUrl: "https://eatwholy.com",
+        githubLink: 'https://www.github.com/YaminNather/wholy-website',
+        liveUrl: "https://wholy-website.vercel.app",
+    });
+    
+    static readonly SmartHome3D: Project = new Project({
+        name: "3D Interactive Automated Smart Home",
+        description: (
+            <>
+                <p>Allows users to control and explore their home via a 3D interface.</p>
+                <p>You can buy cookies and stuff.</p>
+            </>
+        ),
+        technologies: [ Technology.unity3D, Technology.firebase, Technology.arduino ],
+        githubLink: 'https://github.com/YaminNather/UloSmart-3D-Interactive-Home-Automation',
     });
     
     static readonly values: Project[] = [
         Project.eCommerceApplication,
-        Project.eCommerceApplication,
+        Project.SmartHome3D,
         Project.eCommerceApplication,
     ];
 }
