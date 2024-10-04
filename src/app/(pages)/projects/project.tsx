@@ -1,4 +1,8 @@
+import { StaticImageData } from "next/image";
 import { ReactNode } from "react";
+
+import wholyWebsiteThumbnailImage from "./assets/wholy-website-thumbnail.png";
+import smartHomeThumbnailImage from "./assets/smart-home-thumbnail.jpg";
 
 export enum Technology {
     nextJs,
@@ -15,6 +19,7 @@ export class Project {
         readonly name: string,
         readonly description: ReactNode,
         readonly technologies: Technology[],
+        readonly thumbnail: StaticImageData,
         readonly githubLink?: string,
         readonly liveUrl?: string,
         readonly videoLink?: string,
@@ -25,6 +30,7 @@ export class Project {
         this.githubUrl = options.githubLink ?? null;
         this.liveUrl = options.liveUrl ?? null;
         this.videoUrl = options.videoLink ?? null;
+        this.thumbnail = options.thumbnail;
     }
 
     readonly name: string;
@@ -33,6 +39,7 @@ export class Project {
     readonly githubUrl: string | null;
     readonly liveUrl: string | null;
     readonly videoUrl: string | null;
+    readonly thumbnail: StaticImageData;
     
     static readonly eCommerceApplication: Project = new Project({
         name: "ECommerce Application",
@@ -45,6 +52,7 @@ export class Project {
         technologies: [ Technology.nextJs, Technology.aws, Technology.postgreSql ],
         githubLink: 'https://www.github.com/YaminNather/wholy-website',
         liveUrl: "https://wholy-website.vercel.app",
+        thumbnail: wholyWebsiteThumbnailImage,
     });
     
     static readonly SmartHome3D: Project = new Project({
@@ -57,6 +65,7 @@ export class Project {
         ),
         technologies: [ Technology.unity3D, Technology.firebase, Technology.arduino ],
         githubLink: 'https://github.com/YaminNather/UloSmart-3D-Interactive-Home-Automation',
+        thumbnail: smartHomeThumbnailImage
     });
     
     static readonly values: Project[] = [

@@ -17,7 +17,7 @@ export default function ProjectsPage() {
           so if you see something that piques your interest, check out the code and contribute if you have ideas on how it can be improved.
         </p>
 
-        <div className="mt-16 grid grid-cols-3 gap-4">
+        <div className="mt-12 grid grid-cols-3 gap-4">
           {Project.values.map(
             (element, index) => (
               <ProjectCard
@@ -29,6 +29,7 @@ export default function ProjectsPage() {
                 githubUrl={element.githubUrl}
                 liveUrl={element.liveUrl}
                 videoUrl={element.videoUrl}
+                thumbnail={element.thumbnail}
               />
             )
           )}
