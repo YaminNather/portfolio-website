@@ -1,14 +1,24 @@
-import { ReactNode } from "react";
+'use client';
+
+import { ReactNode, useState } from "react";
 
 import { ExternalLink } from "./external_link";
 import { FaFileAlt, FaGithub, FaLinkedin } from "react-icons/fa";
 import { ExternalLinkLink } from "./components/external_link/external_link_link";
 import { AbstractAnimation } from "./components/abstract_animation/abstract_animation";
+import { useIsVisible } from "@/app/hooks/use_is_visible/use_is_visible";
 
 export function HeroSection(): ReactNode {
+  const [sectionElement, setSectionElement] = useState<HTMLElement | null>(null);
+  const isVisible = useIsVisible(sectionElement);
+
   return (
-    <section id="hero" className="flex py-16 items-center">
-      <div className="w-8/12">
+    <section 
+      ref={(element) => setSectionElement(element)} 
+      id="hero" 
+      className={`flex py-16 items-center`}
+    >
+      <div className={`w-8/12 animate-slide-in-y-initial ${(isVisible) ? 'animate-slide-in-y' : ''}`}>
         <p className="font-mono text-5xl font-bold text-white">Hi👋, I'm Yamin Nather</p>
         
         <p className="mt-8">
@@ -29,7 +39,7 @@ export function HeroSection(): ReactNode {
 
       <div className="w-1/12" />
       
-      <div>
+      <div className={`animate-slide-in-y-initial animate-delay-200 ${(isVisible) ? 'animate-slide-in-y' : ''}`}>
         <AbstractAnimation />
       </div>
     </section>
