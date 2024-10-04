@@ -1,11 +1,12 @@
 import { IconButton } from "@/app/components/icon_button";
-import { DetailedHTMLProps, HTMLAttributes, ReactNode } from "react";
+import { DetailedHTMLProps, HTMLAttributes, ReactNode, useState } from "react";
 import { DiFirebase, DiPostgresql } from "react-icons/di";
 import { FaAws, FaEye, FaGithub, FaReact, FaUnity } from "react-icons/fa";
 import { RiNextjsFill } from "react-icons/ri";
 import { Technology } from "../../project";
 import { SiArduino } from "react-icons/si";
 import Image, { StaticImageData } from "next/image";
+import { useIsVisible } from "@/app/hooks/use_is_visible/use_is_visible";
 
 export interface ProjectCardProps extends Omit<DetailedHTMLProps<HTMLAttributes<HTMLDivElement>, HTMLDivElement>, "children"> {
   readonly index: number;
@@ -16,24 +17,32 @@ export interface ProjectCardProps extends Omit<DetailedHTMLProps<HTMLAttributes<
   readonly liveUrl: string | null;
   readonly videoUrl: string | null;
   readonly thumbnail: StaticImageData;
+  
+  readonly rowIndex: number;
 }
 
 export function ProjectCard(props: ProjectCardProps) {
+  const [element, setElement] = useState<HTMLElement | null>(null);
+  const isVisible = useIsVisible(element);
+
   return (
-    <div>
-      <div className="relative h-64">
-        <Image src={props.thumbnail} alt={props.name} className="h-full rounded-md object-cover" />
+    <div 
+      ref={(element) => setElement(element)} 
+      className={`animate-slide-in-y-initial ${(isVisible) ? 'animate-slide-in-y' : ''} ${entryAnimationDelayClassName(props.rowIndex)}`}
+    >
+      <div className="relative h-64 rounded-md overflow-clip animate-slide-in-y-initial animate-slide-in-y">
+        <Image src={props.thumbnail} alt={props.name} className="h-full object-cover" />
         
         <div className="absolute left-0 top-0 flex w-full h-full opacity-0 hover:opacity-100 bg-black bg-opacity-80 justify-center items-center transition">
           <div className="flex items-center">
             {(props.githubUrl) ?
-              <a href={props.githubUrl}>
+              <a href={props.githubUrl} target="_blank">
                 <IconButton iconBuilder={(className) => <FaGithub className={className} />} />
               </a>
               : undefined}
 
             {(props.liveUrl) ?
-              <a href={props.liveUrl}>
+              <a href={props.liveUrl} target="_blank">
                 <IconButton className="ms-4" iconBuilder={(className) => <FaEye className={className} />} />
               </a>
               : undefined}
@@ -47,56 +56,11 @@ export function ProjectCard(props: ProjectCardProps) {
         )}
       </div>
       
-      <p className="mt-4 text-white font-bold">{props.name}</p>
+      <a href={props.githubUrl ?? undefined} target="_blank" className="mt-2 text-white hover:text-green-500 font-bold transition">{props.name}</a>
 
-      <p className="mt-2 h-16">{props.description}</p>
+      <div className="mt-2 h-16">{props.description}</div>
     </div>
   );
-
-
-  // return (
-  //   <div {...props} className="flex bg-neutral-800 bg-opacity-40 hover:outline outline-neutral-500 rounded-md p-4 flex-col transition-all">
-  //     <div className="flex items-start">
-  //       <div className="flex-shrink-0 flex size-20 bg-neutral-800 bg-opacity-60 rounded-md p-4 justify-center items-center">
-  //         <FaMusic className={`size-full ${projectIconColors[props.index % projectIconColors.length]}` }/>
-  //       </div>
-        
-  //       <div className="ms-4">
-  //         <p className="font-mono font-extra-bold text-white">{props.name}</p>
-          
-  //         <div className="mt-1">
-  //           {props.description}
-  //         </div>
-  //       </div>
-  //     </div>
-
-  //     <div className="flex-shrink-0 flex-grow" />
-      
-  //     <div className="mt-4 flex justify-between items-center">
-  //       <div className="flex items-center">
-  //         {props.technologies.map(
-  //           (element, index) => <ProjectTechnologyIcon key={element} className={(index !== 0) ? "m-2" : undefined} iconBuilder={mapProjectTechnologyEnumToIcon(element)} />
-  //         )}
-  //       </div>
-
-  //       <div className="flex items-center">
-  //         {(props.githubUrl) ? 
-  //           <a href={props.githubUrl}>
-  //             <IconButton iconBuilder={(className) => <FaGithub className={className} />} />
-  //           </a> 
-  //           : undefined}
-          
-  //         {(props.liveUrl) ?
-  //           <a href={props.liveUrl}>
-  //             <Button className="min-w-24 min-h-8 rounded-md ms-2 bg-neutral-800 bg-opacity-70 flex justify-center items-center">
-  //                 <FaExternalLinkAlt /> <span className="ms-2">Live Url</span>
-  //             </Button>
-  //           </a>
-  //           : undefined}
-  //       </div>
-  //     </div>
-  //   </div>
-  // );
 }
 
 export function ProjectTechnologyIcon(props: {iconBuilder: (className: string) => ReactNode, className?: string}): ReactNode {
@@ -117,6 +81,12 @@ function mapProjectTechnologyEnumToIcon(enumValue: Technology): (className: stri
     case Technology.arduino: return (className) => <SiArduino className={className} />;
     case Technology.firebase: return (className) => <DiFirebase className={className} />;
   }
+}
+
+function entryAnimationDelayClassName(rowIndex: number): string {
+  if (rowIndex === 0) return '';
+
+  return `animate-delay-${rowIndex}00`;
 }
 
 const projectIconColors: string[] = [

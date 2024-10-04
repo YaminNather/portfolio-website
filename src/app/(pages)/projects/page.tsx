@@ -1,3 +1,5 @@
+'use client';
+
 import { H1 } from "@/app/components/headings/h1";
 import { NavBar } from "@/app/components/nav_bar";
 import { ProjectCard } from "./components/project_card/project_card";
@@ -9,8 +11,8 @@ export default function ProjectsPage() {
     <>
       <NavBar />
       
-      <main className="m-auto max-w-7xl py-32">
-        <H1>Projects</H1>
+      <main className="m-auto max-w-7xl py-16">
+        <H1 className="animate-slide-in-y-initial animate-slide-in-y">Projects</H1>
         
         <p className="mt-4">
           I've worked on tons of little projects over the years but these are the ones that I'm most proud of. Many of them are open-source, 
@@ -30,6 +32,7 @@ export default function ProjectsPage() {
                 liveUrl={element.liveUrl}
                 videoUrl={element.videoUrl}
                 thumbnail={element.thumbnail}
+                rowIndex={index % 3}
               />
             )
           )}
