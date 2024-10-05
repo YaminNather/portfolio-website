@@ -1,0 +1,1 @@
+export const commonStyle = "bg-neutral-800 min-w-64 h-12 rounded-md p-4 border-none focus:border-none focus:outline hover:outline outline-2 outline-neutral-500 placeholder:text-neutral-700";

@@ -4,7 +4,7 @@ export function NavBar() {
   const linkLabels: Map<string, string> = new Map<string, string>([
     ["/", "Home"],
     ["/projects", "Projects"],
-    ["/contact", "Contact Me"],
+    ["/contact_me", "Contact Me"],
   ]);
 
   return (
