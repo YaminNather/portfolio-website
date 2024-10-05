@@ -1,4 +1,4 @@
-import { DetailedHTMLProps, HTMLAttributes, ReactNode, useRef, useState } from "react";
+import { DetailedHTMLProps, HTMLAttributes, ReactNode, useState } from "react";
 import Image, { StaticImageData } from "next/image";
 import { DateRange } from "@/types/date_range";
 import { useIsVisible } from "@/app/hooks/use_is_visible/use_is_visible";

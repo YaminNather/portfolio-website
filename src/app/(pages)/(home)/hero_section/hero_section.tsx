@@ -19,16 +19,16 @@ export function HeroSection(): ReactNode {
       className={`flex py-16 items-center`}
     >
       <div className={`w-8/12 animate-slide-in-y-initial ${(isVisible) ? 'animate-slide-in-y' : ''}`}>
-        <p className="font-mono text-5xl font-bold text-white">Hi👋, I'm Yamin Nather</p>
+        <p className="font-mono text-5xl font-bold text-white">Hi👋, I&apos;m Yamin Nather</p>
         
         <p className="mt-8">
-          I'm a highly motivated and hardworking software developer with extensive experience in both Frontend and Backend development.
-          I'm proficient in a wide range of tech stacks, with a proven ability to quickly learn and adapt to new technologies. 
+          I&apos;m a highly motivated and hardworking software developer with extensive experience in both Frontend and Backend development.
+          I&apos;m proficient in a wide range of tech stacks, with a proven ability to quickly learn and adapt to new technologies. 
         </p>
         
         <br />
       
-        <p>I'm very passionate about coding and actively involved in extracurricular activities, demonstrating strong teamwork and leadership skills.</p>
+        <p>I&apos;m very passionate about coding and actively involved in extracurricular activities, demonstrating strong teamwork and leadership skills.</p>
         
         <div className="mt-8 flex flex-wrap">
           {ExternalLink.values.map(
@@ -47,7 +47,7 @@ export function HeroSection(): ReactNode {
 }
 
 export const externalLinkIcons: Map<ExternalLink, ReactNode> = new Map<ExternalLink, ReactNode>([
-  [ExternalLink.github, <FaGithub />],
-  [ExternalLink.linkedin, <FaLinkedin />],
-  [ExternalLink.resume, <FaFileAlt />],
+  [ExternalLink.github, <FaGithub key="github"/>],
+  [ExternalLink.linkedin, <FaLinkedin key="linkedin" />],
+  [ExternalLink.resume, <FaFileAlt key="resume" />],
 ]);

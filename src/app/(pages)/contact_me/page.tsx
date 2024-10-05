@@ -5,8 +5,8 @@ import Image from "next/image";
 import { Button } from "@/app/components/button/button";
 import { Footer } from "@/app/components/footer/footer";
 import { H1 } from "@/app/components/headings/h1";
-import { Input } from "@/app/components/input/input";
-import { TextArea } from "@/app/components/input/textarea";
+import { Input } from "@/app/components/input";
+import { TextArea } from "@/app/components/input";
 import { NavBar } from "@/app/components/nav_bar";
 import { useState } from "react";
 
@@ -25,7 +25,7 @@ export default function ContactMePage() {
       
       <main className="mx-auto grid max-w-7xl p-16 justify-center items-center grid-cols-2 gap-16">
         <form className="w-full animate-slide-in-y-initial animate-slide-in-y animate-delay-200">
-          <H1 className="animate-slide-in-y">Let's Talk</H1>
+          <H1 className="animate-slide-in-y">Let&apos;s Talk</H1>
           
           <p className="mt-8">Name</p>
 
