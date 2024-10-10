@@ -1,4 +1,4 @@
-import { IconButton } from "@/app/components/icon_button";
+import { OutlinedIconButton } from "@/app/components/icon_button/outlined_icon_button";
 import { DetailedHTMLProps, HTMLAttributes, ReactNode, useState } from "react";
 import { DiFirebase, DiPostgresql } from "react-icons/di";
 import { FaAws, FaEye, FaGithub, FaReact, FaUnity } from "react-icons/fa";
@@ -37,13 +37,13 @@ export function ProjectCard(props: ProjectCardProps) {
           <div className="flex items-center">
             {(props.githubUrl) ?
               <a href={props.githubUrl} target="_blank">
-                <IconButton iconBuilder={(className) => <FaGithub className={className} />} />
+                <OutlinedIconButton iconBuilder={(className) => <FaGithub className={className} />} />
               </a>
               : undefined}
 
             {(props.liveUrl) ?
               <a href={props.liveUrl} target="_blank">
-                <IconButton className="ms-4" iconBuilder={(className) => <FaEye className={className} />} />
+                <OutlinedIconButton className="ms-4" iconBuilder={(className) => <FaEye className={className} />} />
               </a>
               : undefined}
           </div>

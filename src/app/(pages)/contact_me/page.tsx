@@ -1,5 +1,6 @@
 "use client";
 
+import { useState } from "react";
 import Image from "next/image";
 
 import { Button } from "@/app/components/button/button";
@@ -8,20 +9,25 @@ import { H1 } from "@/app/components/headings/h1";
 import { Input } from "@/app/components/input";
 import { TextArea } from "@/app/components/input";
 import { NavBar } from "@/app/components/nav_bar";
-import { useState } from "react";
+import { NavigationDrawer } from "@/app/components/navigation_drawer/navigation_drawer";
 
 import linkedinLogoVector from "./assets/social_media_icons/linkedin.svg";
 import { Link } from "@/app/components/link";
 import { FaEnvelope, FaPhoneAlt } from "react-icons/fa";
+
 
 export default function ContactMePage() {
   const [name, setName] = useState<string>("");
   const [email, setEmail] = useState<string>("");
   const [message, setMessage] = useState<string>("");
 
+  const [navigationDrawerIsOpen, setNavigationDrawerIsOpen] = useState<boolean>(false);
+
   return (
     <>
-      <NavBar />
+      <NavigationDrawer isOpen={navigationDrawerIsOpen} onClosed={() => setNavigationDrawerIsOpen(false)} />
+
+      <NavBar onOpenNavigationDrawerButtonClicked={() => setNavigationDrawerIsOpen(true)} />
       
       <main className="mx-auto grid max-w-7xl px-4 py-4 md:py-16 grid-cols-1 md:grid-cols-2 gap-16">
         <form className="w-full animate-slide-in-y-initial animate-slide-in-y animate-delay-200">

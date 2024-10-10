@@ -1,15 +1,22 @@
 'use client';
 
+import { useState } from "react";
+
 import { H1 } from "@/app/components/headings/h1";
 import { NavBar } from "@/app/components/nav_bar";
 import { ProjectCard } from "./components/project_card/project_card";
 import { Project } from "./project";
 import { Footer } from "@/app/components/footer/footer";
+import { NavigationDrawer } from "@/app/components/navigation_drawer/navigation_drawer";
 
 export default function ProjectsPage() {
+  const [navigationDrawerIsOpen, setNavigationDrawerIsOpen] = useState<boolean>(false);
+
   return (
     <>
-      <NavBar />
+      <NavBar onOpenNavigationDrawerButtonClicked={() => setNavigationDrawerIsOpen(true)} />
+
+      <NavigationDrawer isOpen={navigationDrawerIsOpen} onClosed={() => setNavigationDrawerIsOpen(false)} />
       
       <main className="m-auto max-w-7xl px-4 py-16">
         <H1 className="animate-slide-in-y-initial animate-slide-in-y">Projects</H1>
