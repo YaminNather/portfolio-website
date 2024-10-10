@@ -9,7 +9,7 @@ import { WorkExperience } from "./work_experience";
 
 export function WorkExperienceSection(): ReactNode {
   return (
-    <section id="projects" className="py-16">
+    <section id="projects" className="px-4 py-16">
       <H1>Timeline</H1>
 
       {WorkExperience.values.map(

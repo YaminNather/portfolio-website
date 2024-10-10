@@ -21,14 +21,14 @@ export function WorkExperienceItem(props: WorkExperienceItemProps) {
   return (
     <div ref={(element) => setElement(element)} {...props} className={`flex ${props.className}`}>
       <div className="flex flex-col items-center">
-        <div className="size-20 flex rounded-md border border-neutral-800 bg-neutral-800 bg-opacity-50 justify-center items-center p-3">
+        <div className="size-16 md:size-20 flex rounded-md border border-neutral-800 bg-neutral-800 bg-opacity-50 justify-center items-center p-2 md:p-3">
           <Image src={props.icon} alt="" className="w-full h-full object-contain" />
         </div>
 
         <div className={`w-[2px] flex-grow bg-neutral-800 ${styles.line} ${(isVisible) ? styles.line_grow_animation : ""}`} />
       </div>
 
-      <div className="ms-8 w-6/12 pb-16">
+      <div className="ms-4 md:ms-8 max-w-2xl pb-16">
         <p className={`font-mono text-white font-extrabold text-2xl animate-slide-in-y-initial ${(isVisible) ? "animate-slide-in-y" : ""}`}>
           {props.role}
         </p>

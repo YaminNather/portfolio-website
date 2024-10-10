@@ -39,11 +39,20 @@ export class WorkExperience {
         location: "Bangalore",
         timePeriod: new DateRange(new Date(2023, 6), new Date(2024, 9)),
         description: (className) => (
-            <p className={className}>
-                Developed four dynamic and responsive websites for various clients, utilizing a diverse set of technologies including React JS,
-                Next JS, JavaScript, TypeScript, Redux, Node JS and Spring Boot. Delivered high-quality, scalable solutions tailored to client
-                needs, demonstrating expertise in both frontend and backend development.
-            </p>
+            <div className={className}>
+                <p>
+                    Developed four dynamic and responsive websites for various clients, utilizing a diverse set of technologies including React JS,
+                    Next JS, JavaScript, TypeScript, Redux, Node JS and Spring Boot.
+                </p>
+
+                <br />
+
+                <p>
+                    Delivered high-quality, scalable solutions tailored to client
+                    needs, demonstrating expertise in both frontend and backend development.
+                </p>
+
+            </div>
         )
     });
 
@@ -54,11 +63,20 @@ export class WorkExperience {
         role: "Software Developer",
         timePeriod: new DateRange(new Date(2023, 6), new Date(2024, 9)),
         description: (className) => (
-            <p className={className}>
-                Developed four dynamic and responsive websites for various clients, utilizing a diverse set of technologies including React JS,
-                Next JS, JavaScript, TypeScript, Redux, Node JS and Spring Boot. Delivered high-quality, scalable solutions tailored to client
-                needs, demonstrating expertise in both frontend and backend development.
-            </p>
+            <div className={className}>
+                <p>
+                    Developed four dynamic and responsive websites for various clients, utilizing a diverse set of technologies including React JS,
+                    Next JS, JavaScript, TypeScript, Redux, Node JS and Spring Boot.
+                </p>
+
+                <br />
+
+                <p>
+                    Delivered high-quality, scalable solutions tailored to client
+                    needs, demonstrating expertise in both frontend and backend development.
+                </p>
+
+            </div>
         )
     });
     
@@ -69,11 +87,20 @@ export class WorkExperience {
         role: 'B.Sc. Computer Science, Mathematics and Electronics',
         timePeriod: new DateRange(new Date(2019, 6), new Date(2024, 4)),
         description: (className) => (
-            <p className={className}>
-                Developed four dynamic and responsive websites for various clients, utilizing a diverse set of technologies including React JS,
-                Next JS, JavaScript, TypeScript, Redux, Node JS and Spring Boot. Delivered high-quality, scalable solutions tailored to client
-                needs, demonstrating expertise in both frontend and backend development.
-            </p>
+            <div className={className}>
+                <p>
+                    Developed four dynamic and responsive websites for various clients, utilizing a diverse set of technologies including React JS,
+                    Next JS, JavaScript, TypeScript, Redux, Node JS and Spring Boot.
+                </p>
+
+                <br />
+
+                <p>
+                    Delivered high-quality, scalable solutions tailored to client
+                    needs, demonstrating expertise in both frontend and backend development.
+                </p>
+
+            </div>
         )
     }); 
 
@@ -84,11 +111,20 @@ export class WorkExperience {
         role: '12th Grade ISC',
         timePeriod: new DateRange(new Date(2019, 9), new Date(2019, 9)),
         description: (className) => (
-            <p className={className}>
-                Developed four dynamic and responsive websites for various clients, utilizing a diverse set of technologies including React JS,
-                Next JS, JavaScript, TypeScript, Redux, Node JS and Spring Boot. Delivered high-quality, scalable solutions tailored to client
-                needs, demonstrating expertise in both frontend and backend development.
-            </p>
+            <div className={className}>
+                <p>
+                    Developed four dynamic and responsive websites for various clients, utilizing a diverse set of technologies including React JS,
+                    Next JS, JavaScript, TypeScript, Redux, Node JS and Spring Boot.
+                </p>
+
+                <br />
+
+                <p>
+                    Delivered high-quality, scalable solutions tailored to client
+                    needs, demonstrating expertise in both frontend and backend development.
+                </p>
+
+            </div>
         ),
     });
 
