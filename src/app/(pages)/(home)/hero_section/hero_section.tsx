@@ -10,8 +10,8 @@ import { useIsVisible } from "@/app/hooks/use_is_visible/use_is_visible";
 
 export function HeroSection(): ReactNode {
   const [sectionElement, setSectionElement] = useState<HTMLElement | null>(null);
-  // const isVisible = useIsVisible(sectionElement);
-  const isVisible = true;
+  const isVisible = useIsVisible(sectionElement);
+  // const isVisible = true;
 
   return (
     <section 
@@ -20,7 +20,11 @@ export function HeroSection(): ReactNode {
       className={`grid p-4 py-16 grid-cols-1 md:grid-cols-[90fr,10fr] gap-8 text-center md:text-start`}
     >
       <div className={`animate-slide-in-y-initial ${(isVisible) ? 'animate-slide-in-y' : ''}`}>
-        <p className="font-mono text-5xl font-bold text-white">Hi👋, I&apos;m Yamin Nather</p>
+        <p className="font-mono text-5xl font-bold text-white">
+          Hi👋, I&apos;m
+          <br />
+          Yamin Nather
+        </p>
         
         <p className="mt-8">
           I&apos;m a highly motivated and hardworking software developer with extensive experience in both Frontend and Backend development.
