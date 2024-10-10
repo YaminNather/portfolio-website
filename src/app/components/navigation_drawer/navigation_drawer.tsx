@@ -20,7 +20,7 @@ export function NavigationDrawer(props: NavigationDrawerProps) {
       <IconButton className="absolute right-8 top-8" iconBuilder={(className) => <FaX className={className} />} onClick={() => props.onClosed()} />
 
       {links.map((link, index) => {
-        return <Link href={link.href} className={`${(index !== 0) ? "mt-8" : ""} text-2xl font-bold`}>{link.readableText}</Link>;
+        return <Link key={link.href} href={link.href} className={`${(index !== 0) ? "mt-8" : ""} text-2xl font-bold`}>{link.readableText}</Link>;
       })}
     </nav>
   );

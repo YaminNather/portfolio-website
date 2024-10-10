@@ -20,7 +20,7 @@ export function useIsVisible(element: HTMLElement | null, hold: boolean = true, 
         }
       );
     },
-    []
+    [hold, intersectionRatio]
   );
   
   useEffect(
