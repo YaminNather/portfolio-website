@@ -11,7 +11,7 @@ export default function ProjectsPage() {
     <>
       <NavBar />
       
-      <main className="m-auto max-w-7xl py-16">
+      <main className="m-auto max-w-7xl px-4 py-16">
         <H1 className="animate-slide-in-y-initial animate-slide-in-y">Projects</H1>
         
         <p className="mt-4 animate-slide-in-y-initial animate-slide-in-y animate-delay-200">
@@ -19,7 +19,7 @@ export default function ProjectsPage() {
           so if you see something that piques your interest, check out the code and contribute if you have ideas on how it can be improved.
         </p>
 
-        <div className="mt-12 grid grid-cols-3 gap-4">
+        <div className="mt-12 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-4 gap-y-8">
           {Project.values.map(
             (element, index) => (
               <ProjectCard
