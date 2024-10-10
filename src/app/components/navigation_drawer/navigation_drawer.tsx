@@ -11,9 +11,9 @@ export interface NavigationDrawerProps {
 
 export function NavigationDrawer(props: NavigationDrawerProps) {
   return (
-    <nav 
+    <nav
       className={`
-        absolute flex left-0 top-0 z-40 w-screen h-screen bg-neutral-900 flex-col justify-center items-center 
+        fixed flex left-0 top-0 z-40 w-screen h-screen bg-neutral-900 flex-col justify-center items-center 
         ${styles.navigation_drawer} ${(props.isOpen) ? styles.navigation_drawer_open : styles.navigation_drawer_close}
       `}
     >
