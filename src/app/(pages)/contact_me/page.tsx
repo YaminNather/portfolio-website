@@ -23,7 +23,7 @@ export default function ContactMePage() {
     <>
       <NavBar />
       
-      <main className="mx-auto grid max-w-7xl p-16 justify-center items-center grid-cols-2 gap-16">
+      <main className="mx-auto grid max-w-7xl px-4 py-4 md:py-16 grid-cols-1 md:grid-cols-2 gap-16">
         <form className="w-full animate-slide-in-y-initial animate-slide-in-y animate-delay-200">
           <H1 className="animate-slide-in-y">Let&apos;s Talk</H1>
           
@@ -61,7 +61,7 @@ export default function ContactMePage() {
 
               alert("Thank you for reaching out!");
             }} 
-            className="mt-4"
+            className="mt-4 w-full"
           >
             Contact
           </Button>
