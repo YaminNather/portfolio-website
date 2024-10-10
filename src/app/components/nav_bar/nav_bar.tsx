@@ -1,6 +1,8 @@
 import { Link } from "@/app/components/link";
 import { FaBars } from "react-icons/fa6";
 
+import { IconButton } from "@/app/components/icon_button/icon_button/icon_button";
+
 
 export interface NavBarProps {
   readonly onOpenNavigationDrawerButtonClicked: () => void;
@@ -27,7 +29,7 @@ export function NavBar(props: NavBarProps) {
         )}
       </nav>
 
-      <FaBars className="md:hidden" onClick={() => props.onOpenNavigationDrawerButtonClicked()} />
+      <IconButton className="md:hidden" iconBuilder={(className) => <FaBars className={className} onClick={() => props.onOpenNavigationDrawerButtonClicked()} />} />
       
       {/* <div className="border border-neutral-700 p-3 rounded-full font-bottom">
         <FaSun className="text-green-500" />
