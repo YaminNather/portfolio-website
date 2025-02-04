@@ -1,12 +1,9 @@
 import { OutlinedIconButton } from "@/app/components/icon_button/outlined_icon_button";
 import { DetailedHTMLProps, HTMLAttributes, ReactNode, useState } from "react";
-import { DiFirebase, DiPostgresql } from "react-icons/di";
-import { FaAws, FaEye, FaGithub, FaReact, FaUnity } from "react-icons/fa";
-import { RiNextjsFill } from "react-icons/ri";
-import { Technology } from "../../project";
-import { SiArduino } from "react-icons/si";
+import {  FaEye, FaGithub } from "react-icons/fa";
 import Image, { StaticImageData } from "next/image";
 import { useIsVisible } from "@/app/hooks/use_is_visible/use_is_visible";
+import { Technology } from "../../technology";
 
 export interface ProjectCardProps extends Omit<DetailedHTMLProps<HTMLAttributes<HTMLDivElement>, HTMLDivElement>, "children"> {
   readonly index: number;
@@ -52,7 +49,7 @@ export function ProjectCard(props: ProjectCardProps) {
       
       <div className="mt-2 flex items-center">
         {props.technologies.map(
-          (element, index) => <ProjectTechnologyIcon key={element} className={(index !== 0) ? "m-2" : undefined} iconBuilder={mapProjectTechnologyEnumToIcon(element)} />
+          (element, index) => <ProjectTechnologyIcon key={element.name} className={(index !== 0) ? "m-2" : undefined} iconBuilder={element.logo} />
         )}
       </div>
       
@@ -63,24 +60,12 @@ export function ProjectCard(props: ProjectCardProps) {
   );
 }
 
-export function ProjectTechnologyIcon(props: {iconBuilder: (className: string) => ReactNode, className?: string}): ReactNode {
+export function ProjectTechnologyIcon(props: {iconBuilder: (className?: string) => ReactNode, className?: string}): ReactNode {
   return (
     <div className={`flex size-8 rounded-md bg-neutral-800 bg-opacity-70 p-1 justify-center items-center transition:all ${props.className}`}>
       {props.iconBuilder("size-full")}
     </div>
   );
-}
-
-function mapProjectTechnologyEnumToIcon(enumValue: Technology): (className: string) => ReactNode {
-  switch(enumValue) {
-    case Technology.aws: return (className) => <FaAws className={className} />;
-    case Technology.nextJs: return (className) => <RiNextjsFill className={className} />;
-    case Technology.postgreSql: return (className) => <DiPostgresql className={className} />;
-    case Technology.reactJs: return (className) => <FaReact className={className} />;
-    case Technology.unity3D: return (className) => <FaUnity className={className} />;
-    case Technology.arduino: return (className) => <SiArduino className={className} />;
-    case Technology.firebase: return (className) => <DiFirebase className={className} />;
-  }
 }
 
 function entryAnimationDelayClassName(rowIndex: number): string {

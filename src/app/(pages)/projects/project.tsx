@@ -1,18 +1,11 @@
 import { StaticImageData } from "next/image";
 import { ReactNode } from "react";
 
+import { Technology } from "./technology"; 
+
 import wholyWebsiteThumbnailImage from "./assets/wholy-website-thumbnail.png";
 import smartHomeThumbnailImage from "./assets/smart-home-thumbnail.jpg";
-
-export enum Technology {
-    nextJs,
-    reactJs,
-    postgreSql,
-    aws,
-    unity3D,
-    firebase,
-    arduino
-}
+import musicPlayerThumbnailImage from "./assets/music-player.jpg";
 
 export class Project {
     constructor(options: {
@@ -45,8 +38,7 @@ export class Project {
         name: "ECommerce Application",
         description: (
             <>
-                <p>An eCommerce application for a food company.</p>
-                <p>You can buy cookies and stuff.</p>
+				<p>An online storefront that provides you the convenience of purchasing delicious handcrafted cookies infused with the irresistible flavors of blueberry, pineapple, strawberry, and fig right from the comfort of your home.</p>
             </>
         ),
         technologies: [ Technology.nextJs, Technology.aws, Technology.postgreSql ],
@@ -59,18 +51,30 @@ export class Project {
         name: "3D Interactive Automated Smart Home",
         description: (
             <>
-                <p>Allows users to control and explore their home via a 3D interface.</p>
-                <p>You can buy cookies and stuff.</p>
+				<p>3D Automated Smart Home application offers a fully immersive experience, allowing users to virtually explore and interact with a digital replica of their home.</p>
+				<p>Through this interface, users can control smart devices, manage home settings, and monitor various aspects of their environment in real-time.</p>
             </>
         ),
-        technologies: [ Technology.unity3D, Technology.firebase, Technology.arduino ],
+        technologies: [ Technology.unity3d, Technology.firebase, Technology.arduino ],
         githubLink: 'https://github.com/YaminNather/UloSmart-3D-Interactive-Home-Automation',
         thumbnail: smartHomeThumbnailImage
     });
+
+	static readonly MusicPlayer = new Project({
+		name: "Music Player Application",
+		description: (
+			<>
+				<p>A sleek and modern music player app built using Jetpack Compose for the UI and Media3 ExoPlayer for media playback with amazing user experience.</p>
+			</>
+		),
+		technologies: [ Technology.nextJs, Technology.aws, Technology.postgreSql ],
+		githubLink: 'https://github.com/YaminNather/MusicPlayer',
+		thumbnail: musicPlayerThumbnailImage,
+	});
     
     static readonly values: Project[] = [
         Project.eCommerceApplication,
         Project.SmartHome3D,
-        Project.eCommerceApplication,
+        Project.MusicPlayer,
     ];
 }
