@@ -35,23 +35,16 @@ export class WorkExperience {
     static readonly freelance = new WorkExperience({
         company: "Freelance",
         icon: cynfasLogoImage,
-        role: "Software Developer",
+        role: "Software Engineer",
         location: "Bangalore",
-        timePeriod: new DateRange(new Date(2023, 6), new Date(2024, 9)),
+        timePeriod: new DateRange(new Date(2023, 6, 0), new Date(2024, 12, 0)),
         description: (className) => (
             <div className={className}>
                 <p>
-                    Developed four dynamic and responsive websites for various clients, utilizing a diverse set of technologies including React JS,
-                    Next JS, JavaScript, TypeScript, Redux, Node JS and Spring Boot.
-                </p>
-
-                <br />
-
-                <p>
-                    Delivered high-quality, scalable solutions tailored to client
-                    needs, demonstrating expertise in both frontend and backend development.
-                </p>
-
+									Engineered and launched high-performance B2B and B2C websites and applications, driving a 30% increase in user
+									engagement and retention. Built an AI automated tool for scheduling and posting content to a company’s Social 
+									Media platforms, leading to a 45% increase in product sales.
+								</p>
             </div>
         )
     });
@@ -60,22 +53,15 @@ export class WorkExperience {
         company: "Cynfas",
         icon: cynfasLogoImage,
         location: "Bangalore",
-        role: "Software Developer",
-        timePeriod: new DateRange(new Date(2023, 6), new Date(2024, 9)),
+        role: "Software Engineer",
+        timePeriod: new DateRange(new Date(2022, 6, 0), new Date(2023, 5, 0)),
         description: (className) => (
             <div className={className}>
                 <p>
                     Developed four dynamic and responsive websites for various clients, utilizing a diverse set of technologies including React JS,
-                    Next JS, JavaScript, TypeScript, Redux, Node JS and Spring Boot.
-                </p>
-
-                <br />
-
-                <p>
-                    Delivered high-quality, scalable solutions tailored to client
+                    Next JS, JavaScript, TypeScript, Redux, Node JS and Spring Boot, delivering high-quality, scalable solutions tailored to client
                     needs, demonstrating expertise in both frontend and backend development.
                 </p>
-
             </div>
         )
     });
@@ -85,20 +71,14 @@ export class WorkExperience {
         icon: christUniversityLogoImage,
         location: "Bangalore",
         role: 'B.Sc. Computer Science, Mathematics and Electronics',
-        timePeriod: new DateRange(new Date(2019, 6), new Date(2024, 4)),
+        timePeriod: new DateRange(new Date(2019, 6, 0), new Date(2024, 4, 0)),
         description: (className) => (
             <div className={className}>
-                <p>
-                    Developed four dynamic and responsive websites for various clients, utilizing a diverse set of technologies including React JS,
-                    Next JS, JavaScript, TypeScript, Redux, Node JS and Spring Boot.
-                </p>
+                <p>Secured second place in a college level Hackathon for building a Virtual Driving Test that helps prevent accidents.</p>
 
                 <br />
 
-                <p>
-                    Delivered high-quality, scalable solutions tailored to client
-                    needs, demonstrating expertise in both frontend and backend development.
-                </p>
+                <p>Participated in several extra-curricular activities, including Labyrinth (Computer club) and chess club.</p>
 
             </div>
         )
@@ -109,21 +89,14 @@ export class WorkExperience {
         icon: laidlawMemorialSchoolLogoImage,
         location: "Ketti",
         role: '12th Grade ISC',
-        timePeriod: new DateRange(new Date(2019, 9), new Date(2019, 9)),
+        timePeriod: new DateRange(new Date(2019, 9, 0), new Date(2019, 9, 0)),
         description: (className) => (
             <div className={className}>
-                <p>
-                    Developed four dynamic and responsive websites for various clients, utilizing a diverse set of technologies including React JS,
-                    Next JS, JavaScript, TypeScript, Redux, Node JS and Spring Boot.
-                </p>
+							<p>Secured highest score in 12th ISC Board Exams (School Level), scoring Full Marks in Computer Science Board Exam.</p>
 
-                <br />
+							<br />
 
-                <p>
-                    Delivered high-quality, scalable solutions tailored to client
-                    needs, demonstrating expertise in both frontend and backend development.
-                </p>
-
+							<p>Editorial Prefect for the batch of 2018-2019.</p>
             </div>
         ),
     });

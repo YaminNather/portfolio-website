@@ -33,10 +33,10 @@ export function WorkExperienceItem(props: WorkExperienceItemProps) {
           {props.role}
         </p>
         
-        <p className={`text-white animate-slide-in-y-initial ${(isVisible) ? "animate-slide-in-y" : ""}`}>{props.company}, {props.location}</p>
+				<p className={`text-white animate-slide-in-y-initial ${(isVisible) ? "animate-slide-in-y" : ""}`}>{props.company}, {props.location}</p>
         
         <p className={`mt-2 text-neutral-500 animate-slide-in-y-initial ${(isVisible) ? "animate-slide-in-y" : ""} animate-delay-100`}>
-          {props.timePeriod.toLocaleDateString("en-IN", {year: 'numeric', month: 'long'})}
+          {props.timePeriod.toLocaleDateString("en-IN", {year: 'numeric', month: 'long', timeZone: "Asia/Kolkata"})}
         </p>
         
         {props.description(`mt-4 animate-slide-in-y-initial ${(isVisible) ? "animate-slide-in-y" : ""} animate-delay-200`)}

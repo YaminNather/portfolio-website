@@ -3,7 +3,6 @@
 import { ReactNode, useState } from "react";
 
 import { ExternalLink } from "./external_link";
-import { FaFileAlt, FaGithub, FaLinkedin } from "react-icons/fa";
 import { ExternalLinkLink } from "./components/external_link/external_link_link";
 import { AbstractAnimation } from "./components/abstract_animation/abstract_animation";
 import { useIsVisible } from "@/app/hooks/use_is_visible/use_is_visible";
@@ -37,7 +36,7 @@ export function HeroSection(): ReactNode {
         
         <div className="mt-8 inline-flex flex-wrap">
           {ExternalLink.values.map(
-            (element, index) => <ExternalLinkLink key={element.name} icon={externalLinkIcons.get(element)!} name={element.name} url={element.url} className={(index !== 0) ? 'ms-4' : undefined} />
+            (element, index) => <ExternalLinkLink key={element.name} icon={element.icon()} name={element.name} url={element.url} className={(index !== 0) ? 'ms-4' : undefined} />
           )}
         </div>
       </div>
@@ -49,9 +48,3 @@ export function HeroSection(): ReactNode {
     </section>
   );
 }
-
-export const externalLinkIcons: Map<ExternalLink, ReactNode> = new Map<ExternalLink, ReactNode>([
-  [ExternalLink.github, <FaGithub key="github"/>],
-  [ExternalLink.linkedin, <FaLinkedin key="linkedin" />],
-  [ExternalLink.resume, <FaFileAlt key="resume" />],
-]);
