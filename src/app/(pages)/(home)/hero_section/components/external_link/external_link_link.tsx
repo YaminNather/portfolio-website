@@ -11,7 +11,7 @@ interface ExternalLinkProps {
 
 export function ExternalLinkLink(props: ExternalLinkProps) {
   return (
-    <Link href={props.url} style={props.style} className={`group ${props.className}`}>
+    <Link href={props.url} target="_blank" style={props.style} className={`group ${props.className}`}>
       <div className="inline-flex items-center">
         <span className="group-hover:text-white">{props.icon}</span>
         

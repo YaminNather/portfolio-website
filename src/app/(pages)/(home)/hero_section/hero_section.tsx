@@ -12,7 +12,7 @@ export function HeroSection(): ReactNode {
   const isVisible = useIsVisible(sectionElement);
 
   return (
-    <section 
+    <section
       ref={(element) => setSectionElement(element)}
       id="hero" 
       className={`grid p-4 py-16 grid-cols-1 md:grid-cols-[90fr,10fr] gap-8 text-center md:text-start`}
