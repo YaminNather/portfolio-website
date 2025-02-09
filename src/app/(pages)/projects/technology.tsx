@@ -3,7 +3,7 @@ import { ReactNode } from "react";
 import { DiFirebase, DiPostgresql } from "react-icons/di";
 import { FaAws, FaUnity } from "react-icons/fa";
 import { RiNextjsFill } from "react-icons/ri";
-import { SiArduino } from "react-icons/si";
+import { SiArduino, SiJetpackcompose } from "react-icons/si";
 
 export class Technology {
 	constructor(options: ConstructorOptions) {
@@ -44,6 +44,11 @@ export class Technology {
 		logo: (className) => <SiArduino className={className} />,
 	});
 
+	static readonly jetpackCompose = new Technology({
+		name: "Jetpack Compose",
+		logo: (className) => <SiJetpackcompose className={className} />
+	});
+
 	static readonly values = [
 		Technology.nextJs,
 		Technology.postgreSql,
@@ -51,6 +56,7 @@ export class Technology {
 		Technology.firebase,
 		Technology.unity3d,
 		Technology.arduino,
+		Technology.jetpackCompose,
 	];
 }
 

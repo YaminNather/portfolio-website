@@ -67,7 +67,7 @@ export class Project {
 				<p>A sleek and modern music player app built using Jetpack Compose for the UI and Media3 ExoPlayer for media playback with amazing user experience.</p>
 			</>
 		),
-		technologies: [ Technology.nextJs, Technology.aws, Technology.postgreSql ],
+		technologies: [ Technology.jetpackCompose, Technology.aws ],
 		githubLink: 'https://github.com/YaminNather/MusicPlayer',
 		thumbnail: musicPlayerThumbnailImage,
 	});
