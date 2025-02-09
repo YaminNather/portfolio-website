@@ -10,7 +10,6 @@ import { useIsVisible } from "@/app/hooks/use_is_visible/use_is_visible";
 export function HeroSection(): ReactNode {
   const [sectionElement, setSectionElement] = useState<HTMLElement | null>(null);
   const isVisible = useIsVisible(sectionElement);
-  // const isVisible = true;
 
   return (
     <section 
@@ -32,8 +31,6 @@ export function HeroSection(): ReactNode {
         
         <br />
       
-        <p>I&apos;m very passionate about coding and actively involved in extracurricular activities, demonstrating strong teamwork and leadership skills.</p>
-        
         <div className="mt-8 inline-flex flex-wrap">
           {ExternalLink.values.map(
             (element, index) => <ExternalLinkLink key={element.name} icon={element.icon()} name={element.name} url={element.url} className={(index !== 0) ? 'ms-4' : undefined} />
