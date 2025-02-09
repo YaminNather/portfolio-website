@@ -8,6 +8,7 @@ import { ProjectCard } from "./components/project_card/project_card";
 import { Project } from "./project";
 import { Footer } from "@/app/components/footer/footer";
 import { NavigationDrawer } from "@/app/components/navigation_drawer/navigation_drawer";
+import { Link } from "@/app/components/link/link";
 
 export default function ProjectsPage() {
   const [navigationDrawerIsOpen, setNavigationDrawerIsOpen] = useState<boolean>(false);
@@ -23,7 +24,7 @@ export default function ProjectsPage() {
         
         <p className="mt-4 animate-slide-in-y-initial animate-slide-in-y animate-delay-200">
 					A showcase of my personal projects. Each reflects my problem-solving approach, technical expertise, and attention to detail.
-					Feel free to explore and check out the code!
+					<br/>Feel free to explore and check out the code hosted on my <Link href="https://github.com/YaminNather">Github</Link> profile!
         </p>
 
         <div className="mt-12 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-4 gap-y-8">
