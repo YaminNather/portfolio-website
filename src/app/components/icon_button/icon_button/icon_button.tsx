@@ -5,7 +5,7 @@ export interface IconButtonProps extends DetailedHTMLProps<ButtonHTMLAttributes<
 }
 
 export function IconButton(props: IconButtonProps) {
-	var buttonProps: any = {...props};
+	let buttonProps: any = {...props};
 	delete buttonProps.iconBuilder;
 
   return (
