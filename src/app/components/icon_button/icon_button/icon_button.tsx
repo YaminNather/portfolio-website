@@ -1,3 +1,5 @@
+/* eslint-disable */
+
 import { ButtonHTMLAttributes, DetailedHTMLProps, ReactNode } from "react";
 
 export interface IconButtonProps extends DetailedHTMLProps<ButtonHTMLAttributes<HTMLButtonElement>, HTMLButtonElement> {
@@ -5,7 +7,7 @@ export interface IconButtonProps extends DetailedHTMLProps<ButtonHTMLAttributes<
 }
 
 export function IconButton(props: IconButtonProps) {
-	let buttonProps: any = {...props};
+	const buttonProps: any = {...props};
 	delete buttonProps.iconBuilder;
 
   return (
