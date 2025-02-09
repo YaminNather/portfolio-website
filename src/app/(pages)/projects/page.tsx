@@ -22,8 +22,8 @@ export default function ProjectsPage() {
         <H1 className="animate-slide-in-y-initial animate-slide-in-y">Projects</H1>
         
         <p className="mt-4 animate-slide-in-y-initial animate-slide-in-y animate-delay-200">
-          I&apos;ve worked on tons of little projects over the years but these are the ones that I&apos;m most proud of. Many of them are open-source, 
-          so if you see something that piques your interest, check out the code and contribute if you have ideas on how it can be improved.
+					A showcase of my personal projects. Each reflects my problem-solving approach, technical expertise, and attention to detail.
+					Feel free to explore and check out the code!
         </p>
 
         <div className="mt-12 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-4 gap-y-8">
