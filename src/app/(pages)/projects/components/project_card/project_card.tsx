@@ -55,7 +55,7 @@ export function ProjectCard(props: ProjectCardProps) {
       
       <a href={props.githubUrl ?? undefined} target="_blank" className="mt-2 text-white hover:text-green-500 font-bold transition">{props.name}</a>
 
-      <div className="mt-2 h-16">{props.description}</div>
+      <div className="mt-2">{props.description}</div>
     </div>
   );
 }
