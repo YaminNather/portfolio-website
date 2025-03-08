@@ -40,7 +40,7 @@ export class Project {
             <>
 							<p>
 								An online storefront that provides you the convenience of purchasing delicious handcrafted cookies infused 
-								&nsbp; with the irresistible flavors of blueberry, pineapple, strawberry, and fig right from the comfort of your home.
+								with the irresistible flavors of blueberry, pineapple, strawberry, and fig right from the comfort of your home.
 							</p>
             </>
         ),
