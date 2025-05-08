@@ -1,5 +1,5 @@
 import { ReactNode } from "react";
-import { FaFileAlt, FaGithub, FaLinkedin } from "react-icons/fa";
+import {  FaGithub, FaLinkedin } from "react-icons/fa";
 
 export class ExternalLink {
   constructor(readonly name: string, readonly url: string, readonly icon: (className?: string) => ReactNode) { }
