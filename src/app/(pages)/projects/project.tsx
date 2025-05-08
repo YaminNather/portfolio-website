@@ -38,10 +38,10 @@ export class Project {
         name: "ECommerce Application",
         description: (
             <>
-							<p>
-								An online storefront that provides you the convenience of purchasing delicious handcrafted cookies infused 
-								with the irresistible flavors of blueberry, pineapple, strawberry, and fig right from the comfort of your home.
-							</p>
+                <p>
+                    An online storefront that provides you the convenience of purchasing delicious handcrafted cookies infused 
+                    with the irresistible flavors of blueberry, pineapple, strawberry, and fig right from the comfort of your home.
+                </p>
             </>
         ),
         technologies: [ Technology.nextJs, Technology.aws, Technology.postgreSql ],
@@ -54,9 +54,7 @@ export class Project {
         name: "3D Interactive Automated Smart Home",
         description: (
             <>
-							<p>3D Automated Smart Home application offers a fully immersive experience, allowing users to virtually explore and interact with a digital replica of their home.</p>
-							<br />
-							<p>Through this interface, users can control smart devices, manage home settings, and monitor various aspects of their environment in real-time.</p>
+                <p>3D Automated Smart Home application offers a fully immersive experience, allowing users to virtually explore and interact with a digital replica of their home.</p>
             </>
         ),
         technologies: [ Technology.unity3d, Technology.firebase, Technology.arduino ],
