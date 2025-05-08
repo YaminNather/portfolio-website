@@ -6,6 +6,9 @@ import { Technology } from "./technology";
 import wholyWebsiteThumbnailImage from "./assets/wholy-website-thumbnail.png";
 import smartHomeThumbnailImage from "./assets/smart-home-thumbnail.jpg";
 import musicPlayerThumbnailImage from "./assets/music-player.jpg";
+import itKonnectThumbnailImage from "./assets/itkonnect_thumbnail.png";
+import myICareThumbnailImage from "./assets/myicare_thumbnail.png";
+import micsysThumbnailImage from "./assets/micsys-thumbnail.png";
 
 export class Project {
     constructor(options: {
@@ -73,10 +76,48 @@ export class Project {
 		githubLink: 'https://github.com/YaminNather/MusicPlayer',
 		thumbnail: musicPlayerThumbnailImage,
 	});
+
+	static readonly ItKonnect = new Project({
+		name: "ITKonnect",
+		description: (
+			<>
+				<p>Built a responsive website for ITKonnect to showcase IT services, focusing on clean UI, performance optimization, and cross-browser compatibility.</p>
+			</>
+		),
+		technologies: [ Technology.nextJs, Technology.aws ],
+		thumbnail: itKonnectThumbnailImage,
+	});
+
+	static readonly Micsys = new Project({
+		name: "Micsys",
+		description: (
+			<>
+				<p>Developed a modern, responsive website for Microsystems to highlight their IT solutions and services, with emphasis on clean design, scalability, and smooth user experience.</p>
+			</>
+		),
+		technologies: [ Technology.nextJs, Technology.aws ],
+		thumbnail: micsysThumbnailImage,
+	});
+    
+    
+	static readonly MyICare = new Project({
+		name: "ICare",
+		description: (
+			<>
+				<p>Created a responsive website for I-Care to present showcase their IT services, focusing on intuitive navigation, mobile optimization, and modern UI design.</p>
+			</>
+		),
+		technologies: [ Technology.nextJs, Technology.aws ],
+		thumbnail: myICareThumbnailImage,
+	});
+
     
     static readonly values: Project[] = [
         Project.eCommerceApplication,
         Project.SmartHome3D,
+        Project.MyICare,
         Project.MusicPlayer,
+        Project.Micsys,
+        Project.ItKonnect,
     ];
 }

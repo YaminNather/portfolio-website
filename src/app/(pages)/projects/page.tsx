@@ -23,11 +23,11 @@ export default function ProjectsPage() {
         <H1 className="animate-slide-in-y-initial animate-slide-in-y">Projects</H1>
         
         <p className="mt-4 animate-slide-in-y-initial animate-slide-in-y animate-delay-200">
-					A showcase of my personal projects. Each reflects my problem-solving approach, technical expertise, and attention to detail.
+					A showcase of my projects. They reflect my problem-solving approach, technical expertise, and attention to detail.
 					<br/>Feel free to explore and check out the code hosted on my <Link href="https://github.com/YaminNather">Github</Link> profile!
         </p>
 
-        <div className="mt-12 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-4">
+        <div className="mt-12 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-8">
           {Project.values.map(
             (element, index) => (
               <ProjectCard
