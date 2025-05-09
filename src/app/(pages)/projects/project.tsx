@@ -86,6 +86,7 @@ export class Project {
 		),
 		technologies: [ Technology.nextJs, Technology.aws ],
 		thumbnail: itKonnectThumbnailImage,
+        liveUrl: 'https://i-konnect-website.vercel.app',
 	});
 
 	static readonly Micsys = new Project({
@@ -97,6 +98,7 @@ export class Project {
 		),
 		technologies: [ Technology.nextJs, Technology.aws ],
 		thumbnail: micsysThumbnailImage,
+        liveUrl: 'https://micsys-website.vercel.app',
 	});
     
     
@@ -109,6 +111,7 @@ export class Project {
 		),
 		technologies: [ Technology.nextJs, Technology.aws ],
 		thumbnail: myICareThumbnailImage,
+        liveUrl: 'https://i-care-website.vercel.app',
 	});
 
     

@@ -47,13 +47,30 @@ export function ProjectCard(props: ProjectCardProps) {
         </div>
       </div>
       
-      <div className="mt-2 flex items-center">
-        {props.technologies.map(
-          (element, index) => <ProjectTechnologyIcon key={element.name} className={(index !== 0) ? "m-2" : undefined} iconBuilder={element.logo} />
-        )}
+      <div className="mt-4 flex justify-between items-center">
+        <div className="inline-flex items-center gap-4">
+          {(props.githubUrl) 
+            ? <a href={props.githubUrl} target="_blank">
+                <OutlinedIconButton iconBuilder={(className) => <FaGithub className={className} />} /> 
+              </a>
+            : undefined 
+          }
+          {(props.liveUrl) 
+            ? <a href={props.liveUrl} target="_blank">
+                <OutlinedIconButton iconBuilder={(className) => <FaEye className={className} />} />
+              </a> 
+            : undefined
+          }
+        </div>
+
+        <div className="inline-flex items-center">
+          {props.technologies.map(
+            (element, index) => <ProjectTechnologyIcon key={element.name} className={(index !== 0) ? "ms-2" : undefined} iconBuilder={element.logo} />
+          )}
+        </div>
       </div>
       
-      <a href={props.githubUrl ?? undefined} target="_blank" className="mt-2 text-white hover:text-green-500 font-bold transition">{props.name}</a>
+      <a href={props.liveUrl ?? props.githubUrl ?? undefined} target="_blank" className="inline-flex mt-4 text-white hover:text-green-500 font-bold transition">{props.name}</a>
 
       <div className="mt-2">{props.description}</div>
     </div>
