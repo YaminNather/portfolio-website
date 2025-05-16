@@ -49,7 +49,7 @@ export function ProjectCard(props: ProjectCardProps) {
       
       <div className="mt-4 flex justify-between items-center">
         <div className="inline-flex items-center gap-4">
-          {(props.githubUrl) 
+          {(props.githubUrl)
             ? <a href={props.githubUrl} target="_blank">
                 <OutlinedIconButton iconBuilder={(className) => <FaGithub className={className} />} /> 
               </a>
