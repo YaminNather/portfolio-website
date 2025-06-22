@@ -37,14 +37,14 @@ export class WorkExperience {
         icon: cynfasLogoImage,
         role: "Software Engineer",
         location: "Bangalore",
-        timePeriod: new DateRange(new Date(2023, 6, 0), new Date(2024, 12, 0)),
+        timePeriod: new DateRange(new Date(2023, 6, 0), undefined),
         description: (className) => (
             <div className={className}>
                 <p>
-									Engineered and launched high-performance B2B and B2C websites and applications, driving a 30% increase in user
-									engagement and retention. Built an AI automated tool for scheduling and posting content to a company’s Social 
-									Media platforms, leading to a 45% increase in product sales.
-								</p>
+    					Engineered and launched high-performance B2B and B2C websites and applications, driving a 30% increase in user
+    					engagement and retention. Built an AI automated tool for scheduling and posting content to a company’s Social 
+    					Media platforms, leading to a 45% increase in product sales.
+    				</p>
             </div>
         )
     });
@@ -52,13 +52,13 @@ export class WorkExperience {
     static readonly cynfas = new WorkExperience({
         company: "Cynfas",
         icon: cynfasLogoImage,
-        location: "Bangalore",
+        location: "Remote",
         role: "Software Engineer",
-        timePeriod: new DateRange(new Date(2022, 6, 0), new Date(2023, 5, 0)),
+        timePeriod: new DateRange(new Date(2023, 6, 0), undefined),
         description: (className) => (
             <div className={className}>
                 <p>
-                    Developed four dynamic and responsive websites for various clients, utilizing a diverse set of technologies including React JS,
+                    Developed dynamic and responsive websites and applications for clients, utilizing a diverse set of technologies including React JS,
                     Next JS, JavaScript, TypeScript, Redux, Node JS and Spring Boot, delivering high-quality, scalable solutions tailored to client
                     needs, demonstrating expertise in both frontend and backend development.
                 </p>
@@ -102,7 +102,7 @@ export class WorkExperience {
     });
 
     static readonly values: WorkExperience[] = [
-        WorkExperience.freelance,
+        // WorkExperience.freelance,
         WorkExperience.cynfas,
         WorkExperience.christUniversity,
         WorkExperience.laidlawMemorialSchool,
