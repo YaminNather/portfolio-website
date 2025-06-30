@@ -2,8 +2,8 @@ import { ReactNode } from "react";
 
 import { DiFirebase, DiPostgresql } from "react-icons/di";
 import { FaAws, FaUnity } from "react-icons/fa";
-import { RiNextjsFill } from "react-icons/ri";
-import { SiArduino, SiJetpackcompose } from "react-icons/si";
+import { RiFlutterFill, RiNextjsFill } from "react-icons/ri";
+import { SiArduino, SiGo, SiJetpackcompose, SiSpringboot, SiTimescale } from "react-icons/si";
 
 export class Technology {
 	constructor(options: ConstructorOptions) {
@@ -19,9 +19,29 @@ export class Technology {
 		logo: (className) => <RiNextjsFill className={className} />,
 	});
 
+  static readonly flutter = new Technology({
+    name: "Flutter",
+    logo: (className) => <RiFlutterFill className={className} />,
+  });
+
+  static readonly spring = new Technology({
+    name: "Spring",
+    logo: (className) => <SiSpringboot className={className} />,
+  });
+
+  static readonly golang = new Technology({
+    name: "Golang",
+    logo: (className) => <SiGo className={className} />,
+  });
+
 	static readonly postgreSql = new Technology({
 		name: "PostgreSQL",
 		logo: (className) => <DiPostgresql className={className} />,
+	});
+
+	static readonly timescaleDb = new Technology({
+		name: "TimescaleDB",
+    logo: (className) => <SiTimescale className={className} />,
 	});
 
 	static readonly aws = new Technology({
@@ -51,12 +71,19 @@ export class Technology {
 
 	static readonly values = [
 		Technology.nextJs,
+    Technology.flutter,
+		Technology.jetpackCompose,
+
+    Technology.spring,
+
 		Technology.postgreSql,
+    Technology.timescaleDb,
+
 		Technology.aws,
 		Technology.firebase,
+
 		Technology.unity3d,
 		Technology.arduino,
-		Technology.jetpackCompose,
 	];
 }
 

@@ -3,6 +3,7 @@ import { ReactNode } from "react";
 
 import { Technology } from "./technology"; 
 
+import socialMediaAutomationThumbnailImage from "./assets/social-media-automation.jpg";
 import wholyWebsiteThumbnailImage from "./assets/wholy-website-thumbnail.png";
 import smartHomeThumbnailImage from "./assets/smart-home-thumbnail.jpg";
 import musicPlayerThumbnailImage from "./assets/music-player.jpg";
@@ -36,9 +37,22 @@ export class Project {
     readonly liveUrl: string | null;
     readonly videoUrl: string | null;
     readonly thumbnail: StaticImageData;
+
+    static readonly SocialMediaAutomator = new Project({
+      name: "Social Media Automation Application",
+      description: (
+            <>
+                <p>
+                  In development. A <strong>Cross-Platform Flutter</strong> Application that makes scheduling, automating and analysing Social Media content accross multiple Social Media platforms a pain-free experience.
+                </p>
+            </>
+      ),
+      technologies: [ Technology.flutter, Technology.spring, Technology.aws, Technology.postgreSql, Technology.timescaleDb ],
+      thumbnail: socialMediaAutomationThumbnailImage,
+    });
     
     static readonly eCommerceApplication: Project = new Project({
-        name: "ECommerce Application",
+        name: "Wholy ECommerce Website",
         description: (
             <>
                 <p>
@@ -116,6 +130,7 @@ export class Project {
 
     
     static readonly values: Project[] = [
+        Project.SocialMediaAutomator,
         Project.eCommerceApplication,
         Project.SmartHome3D,
         Project.MyICare,
