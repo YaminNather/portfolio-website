@@ -37,19 +37,22 @@ export function ProjectCard(props: ProjectCardProps) {
               <a href={props.githubUrl} target="_blank">
                 <OutlinedIconButton iconBuilder={(className) => <FaGithub className={className} />} />
               </a>
-              : undefined}
+              : undefined
+            }
 
             {(props.liveUrl) ?
               <a href={props.liveUrl} target="_blank">
                 <OutlinedIconButton className="ms-4" iconBuilder={(className) => <FaEye className={className} />} />
               </a>
-              : undefined}
+              : undefined
+            }
 
             {(props.videoUrl) ?
               <a href={props.videoUrl} target="_blank">
                 <OutlinedIconButton className="ms-4" iconBuilder={(className) => <FaVideo className={className} />} />
               </a>
-              : undefined}
+              : undefined
+            }
           </div>
         </div>
       </div>
@@ -68,6 +71,13 @@ export function ProjectCard(props: ProjectCardProps) {
               </a> 
             : undefined
           }
+
+          {(props.videoUrl) ?
+            <a href={props.videoUrl} target="_blank">
+              <OutlinedIconButton className="ms-4" iconBuilder={(className) => <FaVideo className={className} />} />
+            </a>
+            : undefined
+          }
         </div>
 
         <div className="inline-flex items-center">
@@ -77,7 +87,7 @@ export function ProjectCard(props: ProjectCardProps) {
         </div>
       </div>
       
-      <a href={props.liveUrl ?? props.githubUrl ?? undefined} target="_blank" className="inline-flex mt-4 text-white hover:text-green-500 font-bold transition">{props.name}</a>
+      <a href={props.liveUrl ?? props.githubUrl ?? props.videoUrl ?? undefined} target="_blank" className="inline-flex mt-4 text-white hover:text-green-500 font-bold transition">{props.name}</a>
 
       <div className="mt-2">{props.description}</div>
     </div>
