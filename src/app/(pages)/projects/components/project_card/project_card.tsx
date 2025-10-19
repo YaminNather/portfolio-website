@@ -4,6 +4,7 @@ import {  FaEye, FaGithub } from "react-icons/fa";
 import Image, { StaticImageData } from "next/image";
 import { useIsVisible } from "@/app/hooks/use_is_visible/use_is_visible";
 import { Technology } from "../../technology";
+import { FaVideo } from "react-icons/fa6";
 
 export interface ProjectCardProps extends Omit<DetailedHTMLProps<HTMLAttributes<HTMLDivElement>, HTMLDivElement>, "children"> {
   readonly index: number;
@@ -41,6 +42,12 @@ export function ProjectCard(props: ProjectCardProps) {
             {(props.liveUrl) ?
               <a href={props.liveUrl} target="_blank">
                 <OutlinedIconButton className="ms-4" iconBuilder={(className) => <FaEye className={className} />} />
+              </a>
+              : undefined}
+
+            {(props.videoUrl) ?
+              <a href={props.videoUrl} target="_blank">
+                <OutlinedIconButton className="ms-4" iconBuilder={(className) => <FaVideo className={className} />} />
               </a>
               : undefined}
           </div>

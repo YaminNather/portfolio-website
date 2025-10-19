@@ -3,7 +3,7 @@ import { ReactNode } from "react";
 import { DiFirebase, DiPostgresql } from "react-icons/di";
 import { FaAws, FaUnity } from "react-icons/fa";
 import { RiFlutterFill, RiNextjsFill } from "react-icons/ri";
-import { SiArduino, SiGo, SiJetpackcompose, SiSpringboot, SiTimescale } from "react-icons/si";
+import { SiArduino, SiGo, SiJetpackcompose, SiMysql, SiNestjs, SiSpringboot, SiTimescale } from "react-icons/si";
 
 export class Technology {
 	constructor(options: ConstructorOptions) {
@@ -67,6 +67,16 @@ export class Technology {
 	static readonly jetpackCompose = new Technology({
 		name: "Jetpack Compose",
 		logo: (className) => <SiJetpackcompose className={className} />
+	});
+	
+	static readonly nestJs = new Technology({
+		name: "NestJS",
+		logo: (className) => <SiNestjs className={className} />
+	});
+
+	static readonly mySql = new Technology({
+		name: "MySQL",
+		logo: (className) => <SiMysql className={className} />
 	});
 
 	static readonly values = [

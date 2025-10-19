@@ -3,6 +3,7 @@ import { ReactNode } from "react";
 
 import { Technology } from "./technology"; 
 
+import vastuAstroThumbnailImage from "./assets/vastu-astro-thumbnail.jpg";
 import socialMediaAutomationThumbnailImage from "./assets/social-media-automation.jpg";
 import wholyWebsiteThumbnailImage from "./assets/wholy-website-thumbnail.png";
 import smartHomeThumbnailImage from "./assets/smart-home-thumbnail.jpg";
@@ -37,13 +38,25 @@ export class Project {
     readonly liveUrl: string | null;
     readonly videoUrl: string | null;
     readonly thumbnail: StaticImageData;
+    
+    static readonly VastuAstro = new Project({
+        name: 'Vasto Astro Astrology Application',
+        description: (
+            <p>
+                A <strong>Cross-Platform Flutter</strong> Application that that illuminates a user&lsquo;s life journey through personalized Vastu and Astrology insights, and Consultations with experienced Astrologists.
+            </p>
+        ),
+        technologies: [ Technology.flutter, Technology.nestJs, Technology.aws, Technology.mySql ],
+        thumbnail: vastuAstroThumbnailImage,
+        videoLink: 'https://drive.google.com/file/d/15fyZUGpIBWZzNxeAMjHG750wbbGBYI-Y/view?usp=sharing',
+    });
 
     static readonly SocialMediaAutomator = new Project({
       name: "Social Media Automation Application",
       description: (
             <>
                 <p>
-                  In development. A <strong>Cross-Platform Flutter</strong> Application that makes scheduling, automating and analysing Social Media content accross multiple Social Media platforms a pain-free experience.
+                   A <strong>Cross-Platform Flutter</strong> Application that makes scheduling, automating and analysing Social Media content accross multiple Social Media platforms a pain-free experience.
                 </p>
             </>
       ),
@@ -130,6 +143,7 @@ export class Project {
 
     
     static readonly values: Project[] = [
+        Project.VastuAstro,
         Project.SocialMediaAutomator,
         Project.eCommerceApplication,
         Project.SmartHome3D,
