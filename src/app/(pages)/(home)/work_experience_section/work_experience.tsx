@@ -4,6 +4,7 @@ import { StaticImageData } from "next/image";
 import { DateRange } from "@/types/date_range";
 
 import cynfasLogoImage from "./assets/cynfas-logo.webp";
+import drobleLogoImage from "./assets/droble-logo.webp";
 import christUniversityLogoImage from "./assets/christ-university-logo.webp";
 import laidlawMemorialSchoolLogoImage from "./assets/laidlaw-memorial-school-logo.png";
 
@@ -31,7 +32,6 @@ export class WorkExperience {
     readonly timePeriod: DateRange;
     readonly description: (className: string) => ReactNode;
 
-
     static readonly freelance = new WorkExperience({
         company: "Freelance",
         icon: cynfasLogoImage,
@@ -42,9 +42,25 @@ export class WorkExperience {
             <div className={className}>
                 <p>
     					Engineered and launched high-performance B2B and B2C websites and applications, driving a 30% increase in user
-    					engagement and retention. Built an AI automated tool for scheduling and posting content to a company’s Social 
+    					engagement and retention. Built an AI automated tool for scheduling and posting content to a company’s Social
     					Media platforms, leading to a 45% increase in product sales.
     				</p>
+            </div>
+        )
+    });
+
+    static readonly droble = new WorkExperience({
+        company: "Droble",
+        icon: drobleLogoImage,
+        location: "Remote",
+        role: "Software Engineer",
+        timePeriod: new DateRange(new Date(2025, 7, 0), new Date(2025, 11, 0)),
+        description: (className) => (
+            <div className={className}>
+                <p>
+                    Developed Cross-Platform IOS and Android Mobile Applications and dynamic and responsive Websites for clients, built using Flutter and React JS,
+                    Next JS, Nest JS, Amazon Web Services and Typescript delivering and deployed scalable and pixel perfect software that satisfies client requirements.
+                </p>
             </div>
         )
     });
@@ -54,7 +70,7 @@ export class WorkExperience {
         icon: cynfasLogoImage,
         location: "Remote",
         role: "Software Engineer",
-        timePeriod: new DateRange(new Date(2023, 6, 0), undefined),
+        timePeriod: new DateRange(new Date(2023, 6, 0), new Date(2025, 4, 0)),
         description: (className) => (
             <div className={className}>
                 <p>
@@ -65,7 +81,7 @@ export class WorkExperience {
             </div>
         )
     });
-    
+
     static readonly christUniversity = new WorkExperience({
         company: "Chirst Deemed to be University",
         icon: christUniversityLogoImage,
@@ -82,7 +98,7 @@ export class WorkExperience {
 
             </div>
         )
-    }); 
+    });
 
     static readonly laidlawMemorialSchool = new WorkExperience({
         company: "Laidlaw Memorial School and Junior College",
@@ -103,6 +119,7 @@ export class WorkExperience {
 
     static readonly values: WorkExperience[] = [
         // WorkExperience.freelance,
+        WorkExperience.droble,
         WorkExperience.cynfas,
         WorkExperience.christUniversity,
         WorkExperience.laidlawMemorialSchool,
